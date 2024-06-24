@@ -3,7 +3,14 @@ const myCar= {
     name: "Ford Escort",
 
     drive() {
-        console.log("Weeee. I'm driving!");
+        const yourCar = Object.create(myCar, {
+            model: {
+                value: "Ford Escort",
+                enumerable: true,
+            },
+        });
+        console.log(yourCar.name);
+        console.log(`${yourCar.model}`);    console.log("Weeee. I'm driving!");
     },
 
     panic() {
@@ -11,11 +18,4 @@ const myCar= {
     },
 };
 
-const yourCar = Object.create(myCar, {
-    model: {
-        value: "Ford Escort",
-        enumerable: true,
-    },
-});
-console.log(yourCar.name);
-console.log(`${yourCar.model}`);
+
